@@ -6,10 +6,13 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee implements Employee {
 
+    private double annualSalary;
+    private double annualBonus;
+    
     /** default constructor. Is this the best way to go? */
-    public SalariedEmployee() {}
+    
 
     /**
      * Convenience constructor. Is this the best way to go?
@@ -20,6 +23,20 @@ public class SalariedEmployee extends Employee {
         setAnnualSalary(annualSalary);
         setAnnualBonus(annualBonus);
     }
+    public double getAnnualWages() {
+        return annualSalary + annualBonus;
+    }
 
+    public double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public void setAnnualBonus(double annualBonus) {
+        this.annualBonus = annualBonus;
+    }
+
+    public void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
     
 }
