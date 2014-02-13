@@ -6,6 +6,8 @@
 
 package dip.lab2.student.solution1;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Don
@@ -18,10 +20,10 @@ public class Startup {
 
         TipCalculator[] tips = {tip1, tip2};
         TipCalculatorService tcs = new TipCalculatorService();
-
+        NumberFormat dollars = NumberFormat.getCurrencyInstance();
+        
         for (int i = 0; i < tips.length; i++) {
-            System.out.println("Total bill " + (i + 1) + " $"
-                    + (tcs.getTipForService(tips[i])));
+            System.out.println("Total bill " + (i + 1) + " " + dollars.format(tcs.getTipForService(tips[i])));
         }
 
     }
